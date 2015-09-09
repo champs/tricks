@@ -11,3 +11,9 @@ Host *
   # make connection alive
   ClientAliveInterval 60
 ```
+
+
+## autossh
+flags 
+  -f deamon
+  -M monitor port, (0 turns off)
