@@ -3,6 +3,7 @@
 ``` 
 Host *
   ServerAliveInterval 60
+  ExitOnForwardFailure yes  # disconnect from remote server if connection failed
 ```
 
 ## Server
