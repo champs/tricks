@@ -34,6 +34,7 @@ mosh --ssh="-o <blah> -p <port>" server.com
 
 
 ### create reverse tunnel
+```
 ssh -o ExitOnForwardFailure=yes\
     -o UserKnownHostsFile=/dev/null\
     -o StrictHostKeyChecking=no\
@@ -43,3 +44,9 @@ ssh -o ExitOnForwardFailure=yes\
     -p <port number>\
     -N -T -R <reverse port>:localhost:22\
     <user>@<hostname>
+
+# validate if reverse tunnel is listening on the server
+netstat -an | egrep "tcp.*:$REMOTE_HTTP_PORT.*LISTEN" > /dev/null 2>&1
+# validate if reverse tunnel is connected on the server
+netstat -an | egrep "tcp.*:$REMOTE_HTTP_PORT.*ESTABLISHED" > /dev/null 2>&1
+```
