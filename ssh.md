@@ -31,3 +31,15 @@ mosh-server
 
 ### client
 mosh --ssh="-o <blah> -p <port>" server.com
+
+
+### create reverse tunnel
+ssh -o ExitOnForwardFailure=yes\
+    -o UserKnownHostsFile=/dev/null\
+    -o StrictHostKeyChecking=no\
+    -o ServerAliveInterval=5\
+    -o ServerAliveCountMax=1\
+    -i <private key>\
+    -p <port number>\
+    -N -T -R <reverse port>:localhost:22\
+    <user>@<hostname>
