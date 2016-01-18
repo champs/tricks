@@ -18,7 +18,7 @@ Another Git trick and trip.
 
 ***Clean up Corrupted module*** -
 ```shell
-From redmine.local:/onesrc/smashfs
+From gitserver.local://repo/test
  * branch            champ/test -> FETCH_HEAD
 Updating 3f0c957..22e9c7b
 error: object file .git/objects/1f/fb2775043b843503dd37ca52cd5787dc2bf06f is empty
