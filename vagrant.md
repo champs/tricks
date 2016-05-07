@@ -1,11 +1,25 @@
-
-``` setup
-```
-
+setup
+-----
 
 ``` bash
     vagrant init ubuntu/trusty64; vagrant up --provider virtualbox
     vagrant up
+    vagrant ssh
+```
+
+
+vagrant file
+------------
+```
+www.vm.box = "ubuntu/trusty64"  
+www.vm.hostname = "dev.champ.com"
+www.vm.provision :shell, :path => "provision.sh"
+```
+
+provision file
+--------------
+```
+sudo apt-get install apache2
 ```
 
 If you see this error
@@ -28,6 +42,20 @@ If you see this error
 
 Do this
 
-```
+``` ssh
     vagrant plugin install vagrant-vbguest
+    vagrant reload
 ```
+
+If you dont see the share folder, do this
+
+```
+sudo ln -s /opt/VBoxGuestAdditions-4.3.10/lib/VBoxGuestAdditions /usr/lib/VBoxGuestAdditions
+```
+
+useful link
+
+Each vm will update /etc/hosts file[vagrant hostupdater](https://github.com/cogitatio/vagrant-hostsupdater)
+
+[ref articles](https://24ways.org/2014/what-is-vagrant-and-why-should-i-care/)
+[postgres base](https://github.com/jackdb/pg-app-dev-vm)
