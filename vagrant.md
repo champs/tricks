@@ -11,9 +11,11 @@ setup
 vagrant file
 ------------
 ```
-www.vm.box = "ubuntu/trusty64"  
-www.vm.hostname = "dev.champ.com"
-www.vm.provision :shell, :path => "provision.sh"
+  config.vm.network :private_network, ip: "192.168.0.59"
+  config.vm.box = "ubuntu/trusty64"
+  config.vm.hostname = "dev.champ.com"
+  config.vm.provision :shell, :path => "vagrant-setup/bootstrap-postgres.sh"
+  config.hostsupdater.aliases = ["dev.champ.com", "devchamp.local"]
 ```
 
 provision file
@@ -55,7 +57,8 @@ sudo ln -s /opt/VBoxGuestAdditions-4.3.10/lib/VBoxGuestAdditions /usr/lib/VBoxGu
 
 useful link
 
-Each vm will update /etc/hosts file[vagrant hostupdater](https://github.com/cogitatio/vagrant-hostsupdater)
+[vagrant hostupdater](https://github.com/cogitatio/vagrant-hostsupdater) will update /etc/hosts 
 
 [ref articles](https://24ways.org/2014/what-is-vagrant-and-why-should-i-care/)
+
 [postgres base](https://github.com/jackdb/pg-app-dev-vm)
