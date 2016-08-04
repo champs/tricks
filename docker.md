@@ -1,11 +1,16 @@
-docker debug exited containter
-```
-docker run --rm -it <img_id> /bin/bash
-```
-
 docker build cmds:
 ```
 docker build -t .
+Step 1: <cmd>
+ ---> Running in 27b060a3f926
+     ... <output>  <---
+ ---> 233ddda75c1a
+Removing intermediate container 27b060a3f926
+
+If there is any error on output we can debug img <27b060a3f926>
+>>> docker run --rm -it <img_id> /bin/bash
+
+
 ```
 
 docker images
