@@ -21,3 +21,9 @@ docker containers
 ```
 docker rm <cntr_id>
 ```
+
+
+docker compose
+```
+docker-compose -f docker-compose.yml -f production.yml up -d
+```
