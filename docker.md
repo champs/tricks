@@ -3,12 +3,16 @@ docker debug exited containter
 docker run --rm -it <img_id> /bin/bash
 ```
 
+docker build cmds:
+```
+docker build -t .
+```
 
-remove docker image
+docker images
 ```
 docker rmi <img_id>
 ```
-remove docker container
+docker containers
 ```
 docker rm <cntr_id>
 ```
