@@ -48,6 +48,7 @@ Writing superblocks and filesystem accounting information: done
 ```
 
 4.) sudo mkdir /mnt/data
+
 5.) edit fstab make sure fs is persist after reboot
 ```
 exablox@ip-10-0-2-201:~$ sudo cat /etc/fstab
@@ -55,3 +56,4 @@ sudo: unable to resolve host ip-10-0-2-201
 LABEL=cloudimg-rootfs	/	 ext4	defaults,discard	0 0
 xvdb	/mnt/data	ext4	defaults,nobootwait,nofail	0	2
 ```
+6.) sudo mount -a
