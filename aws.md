@@ -17,7 +17,7 @@ loop1                               7:1    0     2G  0 loop
 
 2.) list special information, such as file system type.
 ```
-sudo file -s /dev/xvdf
+sudo file -s /dev/xvdb
 ```
 3.) sudo mkfs -t ext4 /dev/xvdb  Make filesystem on device
 ```
@@ -54,6 +54,6 @@ Writing superblocks and filesystem accounting information: done
 exablox@ip-10-0-2-201:~$ sudo cat /etc/fstab
 sudo: unable to resolve host ip-10-0-2-201
 LABEL=cloudimg-rootfs	/	 ext4	defaults,discard	0 0
-xvdb	/mnt/data	ext4	defaults,nobootwait,nofail	0	2
+/dev/xvdb	/mnt/data	ext4	defaults,nobootwait,nofail	0	2
 ```
 6.) sudo mount -a
