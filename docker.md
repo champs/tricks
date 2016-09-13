@@ -27,3 +27,9 @@ docker compose
 ```
 docker-compose -f docker-compose.yml -f production.yml up -d
 ```
+
+stop & remove all docker ps
+```
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+```
