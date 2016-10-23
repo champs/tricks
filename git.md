@@ -31,6 +31,28 @@ fatal: loose object 1ffb2775043b843503dd37ca52cd5787dc2bf06f (stored in .git/obj
 	find .git/objects/ -size 0 -delete.
 ```
 
+***Change email for all previous commit ***
+
+```
+git filter-branch --env-filter '
+OLD_EMAIL="OLD@EMAIL.com" 
+CORRECT_NAME="Name LastName" 
+CORRECT_EMAIL="NEW@EMAIL.com" 
+if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ]
+then
+    export GIT_COMMITTER_NAME="$CORRECT_NAME"
+    export GIT_COMMITTER_EMAIL="$CORRECT_EMAIL"
+fi
+if [ "$GIT_AUTHOR_EMAIL" = "$OLD_EMAIL" ]
+then
+    export GIT_AUTHOR_NAME="$CORRECT_NAME"
+    export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL"
+fi
+' --tag-name-filter cat -- --branches --tags
+
+```
+
+
 ***Git bundle***
 Use git bundle to deploy a code to a remote server that can not to git server.
 
@@ -40,3 +62,6 @@ scp filename.bundle <server>:<path>
 -- on remote server
 > git clone -b <branch> filename.bundle <targetdir>
 ```
+
+
+
