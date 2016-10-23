@@ -32,7 +32,7 @@ fatal: loose object 1ffb2775043b843503dd37ca52cd5787dc2bf06f (stored in .git/obj
 ```
 
 
-***Change email for all previous commit ***
+***Change email for all previous commit***
 ```
 git filter-branch --env-filter '
 OLD_EMAIL="OLD@EMAIL.com" 
