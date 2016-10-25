@@ -63,5 +63,8 @@ scp filename.bundle <server>:<path>
 > git clone -b <branch> filename.bundle <targetdir>
 ```
 
+***Git config***
+`git config --global push.default simple`
+
 
 
