@@ -67,4 +67,8 @@ scp filename.bundle <server>:<path>
 `git config --global push.default simple`
 
 
+***Git upstream***
+git remote add <remotename> <git clone url>
+git fetch <remotename>
+git checkout <remotename>/<branchname> -b <new localbranch>
 
